@@ -1,0 +1,2 @@
+class PrefillsController < ApplicationController
+end
