@@ -1,0 +1,2 @@
+class Prefill < ApplicationRecord
+end
