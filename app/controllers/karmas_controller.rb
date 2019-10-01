@@ -16,7 +16,7 @@ class KarmasController < ApplicationController
     @karma = Karma.new(karma_params) 
     if @karma.valid?
       @karma.save 
-      redirect_to karmas_path 
+      redirect_to user_path(@karma.user) 
     else 
       render :new 
     end 

@@ -13,12 +13,9 @@ class PrefillsController < ApplicationController
 
   def create
     @prefill = Prefill.new(prefill_params) 
-    if @prefill.valid?
       @prefill.save 
-      redirect_to prefills_path 
-    else 
-      render :new 
-    end 
+      puts prefill_params
+      redirect_to user_path(@prefill.user) 
   end 
 
 
