@@ -20,7 +20,30 @@ class KarmasController < ApplicationController
     else 
       render :new 
     end 
-  end   
+  end  
+
+  def edit
+    @karma = Karma.find(params[:id])
+  end 
+
+  #update logic not completely tight, needs to ensure that it follows strong params and validations for the min requirements 
+  def update  
+    @karma = id_param
+    if @karma.valid? 
+    @karma.update(karma_params)
+      redirect_to @karma
+    else 
+      render :edit
+    end 
+  end 
+
+  def destroy 
+    @karma = id_param
+    @karma.destroy
+    flash[:notice] = "Your Karma that you gave someone, that made their day, is now deleted. You are shady."
+    #flash notice not working, get to work later. 
+    redirect_to @karma
+  end 
 
 
   private 

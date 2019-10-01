@@ -1,7 +1,7 @@
 <h1><%="All the Karmas"%> </h1>
-<% @karmas.each do |user| %>
+<% @karmas.each do |karma| %>
 <ul>
-<%=user.comment%>
-
+<%=karma.comment%>
+<%=karma.user_id%>
 <%end%>
 </ul>

@@ -1,10 +1,22 @@
+<ul>
+<h4>Profile Page</h4>
 <%=@user.name%>
-<%="
+<h4>Other Features</h4>
+<%= "
 
 \nShows your profile with your picture 
 \n
-all your Karma
-\n 
+
 and prefills
 \n 
 what groups you are apart of "%>
+<h4>Karma Wall</h4>
+<% @user.karmas.each do |karma|%> 
+<ul>
+<li>
+
+   <%= karma.comment %>
+</li>
+</ul>
+<%end%> 
+</ul>
