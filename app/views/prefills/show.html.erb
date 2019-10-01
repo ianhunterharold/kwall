@@ -1,0 +1,9 @@
+<h3>Compliments</h3>
+
+<%= @prefill.selection%>
+<%=@prefill.user_id%>
+<h4>from</h4> 
+
+<h4>This page will live on the users profile</h4>
+<%=link_to "Delete", @prefill, method: :delete, 
+data: {confirm: "Are you sure you want to delete your compliment?" }%>

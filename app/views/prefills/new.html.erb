@@ -1,0 +1,12 @@
+<h3>Giving a Compliment</h3>
+<%= form_for(@prefill) do |f| %>
+
+  <label>Give a Compliment</label><br>
+  <br>
+  <%=f.collection_select :selection, Prefill.all, :selection,:selection%><br> 
+  <%=f.collection_select :user_id, User.all, :id,:name %>
+  <%= f.submit %>
+<!-- as I was writing my code outloud, I identified which problem I had. Important note on Collection Select
+colleciton_select property of model youre saving, what you are iterating over,  what you are sending back to the controller, how do you want to display it
+  -->
+<% end %>
