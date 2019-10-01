@@ -1,0 +1,10 @@
+<%= "<Groups>" %>
+<%=@group.name%>
+<%@group.users.each do |user| %>
+<%=user.name%>
+<%end%>
+<br>
+<%# <%=link_to "Delete", @group, method: :delete, 
+data: {confirm: "Are you sure you want to remove yourself from this group?" }%> 
+<br>
+<!-- unsure if i can remove myself or am I deleting the entire group, probably removing the entire group.-->

@@ -1,22 +1,24 @@
 <ul>
 <h4>Profile Page</h4>
 <%=@user.name%>
-<h4>Other Features</h4>
-<%= "
+<h4>Groups</h4>
+<% @user.groups.each do |group|%>
+<%=group.name%>
+<%end%>
 
-\nShows your profile with your picture 
-\n
+<h4>Compliments</h4>
+<ul>
+   <% @user.prefills.each do |prefill| %>
+   <%=prefill.selection%> 
+   <br>
+   <%end%>
+</ul>
 
-and prefills
-\n 
-what groups you are apart of "%>
-<h4>Karma Wall</h4>
+<h4><%=link_to"Give Some Karma",new_karma_path%></h4>
 <% @user.karmas.each do |karma|%> 
 <ul>
 <li>
-
    <%= karma.comment %>
 </li>
 </ul>
 <%end%> 
-</ul>

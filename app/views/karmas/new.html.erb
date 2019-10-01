@@ -5,5 +5,7 @@
   <br>
   <%= f.text_area :comment %><br>
   <%=f.collection_select :user_id, User.all, :id,:name %>
+  <!--maybe here is where you want the person to
+  leave their name so that when they give karma, you can see who its form  -->
   <%= f.submit %>
 <% end %>
