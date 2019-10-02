@@ -20,6 +20,10 @@
 <ul>
 <li>
    <%= karma.comment %>
+    <!--connected to author or authentication-->
+   <%= link_to "From...", karma_path %>
+   <!-- loops through and only links to the first karma and not the second. 
+   It is only looping to connect the first karma and not the second one -->
 </li>
 </ul>
 <%end%> 
