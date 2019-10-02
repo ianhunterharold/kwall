@@ -12,16 +12,18 @@ class GroupsController < ApplicationController
     @group = id_params
   end 
 
-  def create 
-    @group = Group.new(groups_params)
-    if @group.valid?
-      @group.save 
-      # @user = User.find(params[:id])
-      redirect_to user_path(@group.user_id)
-    else
-      render :new 
-    end 
-  end
+  # def create 
+  #   @group = Group.new(groups_params)
+  #   if @group.valid?
+  #     @group.save 
+  #     # byebug
+  #     @user = User.find(params[:group][:id])
+  #     #tested in byebug and needed to access the join table nested information by tiering into group and id 
+  #     redirect_to user_path(@user)
+  #   else
+  #     render :new 
+  #   end 
+  # end
 
   private 
 
