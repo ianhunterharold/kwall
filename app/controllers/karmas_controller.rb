@@ -1,4 +1,6 @@
 class KarmasController < ApplicationController
+  before_action :security
+  
   def index 
     @karmas = Karma.all 
   end 
@@ -40,9 +42,9 @@ class KarmasController < ApplicationController
   def destroy 
     @karma = id_param
     @karma.destroy
-    flash[:notice] = "Your Karma that you gave someone, that made their day, is now deleted."
+    flash[:delete] = "you deleted karma. someone put effort into that.."
     #flash notice not working, get to work later. 
-    redirect_to @karma
+    redirect_to user_path
   end 
 
 

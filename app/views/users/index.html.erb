@@ -1,6 +1,8 @@
 <h1><%="Flatiron Karma Wall"%> </h1>
 <% @users.each do |user| %>
 <ul>
-<%=user.name%>
+<%=user.name%> 
+<%=link_to "profile", user_path(user) %> 
+<%=user.title%>
 <%end%>
 </ul>

@@ -1,15 +1,23 @@
 class UsersController < ApplicationController
-  
+
   def index
+    if logged_in?
     @users = User.all
+    else 
+      redirect_to login_path
+    end 
   end 
 
   def show 
-    @user = id_params
+    if logged_in?
+      @user = id_params
+    else 
+      redirect_to login_path
+    end 
   end 
   
   def new 
-    @user = User.new 
+      @user = User.new 
   end 
 
   def create 

@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :security
   
   def new 
     @group = Group.new

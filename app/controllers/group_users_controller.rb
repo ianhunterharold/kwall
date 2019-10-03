@@ -1,4 +1,6 @@
 class GroupUsersController < ApplicationController
+  before_action :security
+  
   def new 
     @group_user = GroupUser.new  
   end 

@@ -1,4 +1,6 @@
 class PrefillsController < ApplicationController
+  before_action :security
+  
   def index 
     @prefills = Prefill.all 
   end 
