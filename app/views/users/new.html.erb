@@ -1,11 +1,13 @@
 <ol>
-<%= "creating an account. easy peasy lemon squeezy."%>
+<%= "creating an account, easy peasy lemon squeezy."%>
 </ol>
 <br>
 <%= form_for(@user) do |f| %>
-<label>Name</label>
+<label>name</label>
 <%= f.text_field :name %>
-<label>Email</label>
+<label>email</label>
 <%= f.text_field :email %>
+<label>Student or Instructor?</label>
+<%= f.text_field :title %>
 <%= f.submit "Create Account" %>
 <% end %>
