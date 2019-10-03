@@ -15,7 +15,9 @@ class KarmasController < ApplicationController
   end 
 
   def create 
+    # byebug
     @karma = Karma.new(karma_params) 
+    @karma.current_user_id = session[:user_id]
     if @karma.valid?
       @karma.save 
       redirect_to user_path(@karma.user) 
@@ -23,12 +25,12 @@ class KarmasController < ApplicationController
       render :new 
     end 
   end  
+# , :current_user_id=session[:user_id]
 
   def edit
     @karma = Karma.find(params[:id])
   end 
 
-  #update logic not completely tight, needs to ensure that it follows strong params and validations for the min requirements 
   def update  
     @karma = id_param
     if @karma.valid? 
@@ -43,7 +45,6 @@ class KarmasController < ApplicationController
     @karma = id_param
     @karma.destroy
     flash[:delete] = "you deleted karma. someone put effort into that.."
-    #flash notice not working, get to work later. 
     redirect_to user_path
   end 
 
@@ -54,8 +55,9 @@ class KarmasController < ApplicationController
     Karma.find(params[:id])
   end 
 
-  def karma_params 
+  def karma_params
     params.require(:karma).permit(:comment, :user_id)
   end 
+
 
 end

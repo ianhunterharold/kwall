@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def security 
     if !logged_in?
-      flash[:login_in] = "aren't you curious who is giving who karma? create an account or login to see all the juicy details" 
+      flash[:login_in] = "aren't you curious who is giving who karma? create an account or login to see all the details" 
       redirect_to login_path
     end 
   end 

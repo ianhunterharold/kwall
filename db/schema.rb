@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_155740) do
+ActiveRecord::Schema.define(version: 2019_10_03_182940) do
 
   create_table "group_users", force: :cascade do |t|
     t.integer "group_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_155740) do
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "current_user_id"
   end
 
   create_table "prefills", force: :cascade do |t|

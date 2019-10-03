@@ -3,4 +3,5 @@ class Karma < ApplicationRecord
   validates :comment, presence: true 
   validates :comment, length: {minimum: 5}
   validates :comment, length: {maximum: 500}
+
  end

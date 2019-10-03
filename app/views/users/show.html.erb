@@ -32,9 +32,12 @@
 <% @user.karmas.each do |karma|%> 
 <ul>
 <li>
-   <%= karma.comment %>  
+   <%= karma.comment %> 
+   <%= link_to "more", karma_path(karma)%>
+   <%= link_to "sender", user_path(karma.current_user_id) %>
+   
 </li>
-</ul>
+</ul> 
 <%end%> 
 
 <%= flash[:delete] %>

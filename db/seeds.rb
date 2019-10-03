@@ -17,10 +17,10 @@ u8= User.create(name: "Megan Scarlett", title: "Student",email: "megan@email.com
 u9= User.create(name: "David Stoll", title: "Instructor",email: "david@email.com")
 u10= User.create(name: "Hal Dunn ", title: "Instructor",email: "hal@email.com")
 
-k1 = Karma.create(user_id:1, comment:"You are the best!" )
-k2 = Karma.create(user_id:2, comment:"Thank you for helping me!" )
-k3 = Karma.create(user_id:3, comment:"You teach me so much, thank you!" )
-k4 = Karma.create(user_id:3, comment:"Loved seeing you explain the whiteboard problem, that helped me understand sort so much more!" )
+k1 = Karma.create(user_id:1, comment:"You are the best!",current_user_id: 2 )
+k2 = Karma.create(user_id:2, comment:"Thank you for helping me!",current_user_id:3)
+k3 = Karma.create(user_id:3, comment:"You teach me so much, thank you!",current_user_id: 4 )
+k4 = Karma.create(user_id:3, comment:"Loved seeing you explain the whiteboard problem, that helped me understand sort so much more!",current_user_id: 5)
 
 p1 = Prefill.create(user_id:1, selection: "Fast Responder")
 p2 = Prefill.create(user_id:2, selection: "Always on Time")
