@@ -1,35 +1,38 @@
 <ul>
-<h5><%=current_user.name%> is currently logged in</h5>
-<%= link_to "logout", logout_path %>
+<h5><%=current_user.name%> is logged in <%=link_to "profile", user_path(current_user) %></h5>
+<h5> current title: <%=current_user.title%>  <%= link_to "logout", logout_path %></h5>
 <br>
 <br>
 <br>
-  <h2> Profile of <%=@user.name%></h2>
+  <h2> ________<%=@user.name%>________</h2>
 
 <h4><%=link_to"Join Another Group", new_group_user_path%></h4>
 <% @user.groups.each do |group|%>
-
-<%=group.name%>
+   <ul>
+   <li>
+   <%=group.name%> 
+   </li>
+   </ul>
+   <br>
 <%end%>
 
 <h4><%=link_to"Give a Compliment",new_prefill_path%></h4>
-<ul>
+   
    <% @user.prefills.each do |prefill| %>
+   <ul>
+   <li>
    <%=prefill.selection%> 
+   </li>
+   </ul>
    <br>
    <%end%>
-</ul>
+
 
 <h4><%=link_to"Give Some Karma",new_karma_path%></h4>
-<%="See who is in the office "%>
 <% @user.karmas.each do |karma|%> 
 <ul>
 <li>
-   <%= karma.comment %>
-    <!--connected to author or authentication-->
-   <%= link_to "From...", karma_path %>
-   <!-- loops through and only links to the first karma and not the second. 
-   It is only looping to connect the first karma and not the second one -->
+   <%= karma.comment %>  
 </li>
 </ul>
 <%end%> 

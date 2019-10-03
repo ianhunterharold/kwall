@@ -6,11 +6,12 @@ class AuthController < ApplicationController
 
   def verify
     @user = User.find_by(email: params[:user][:email])
-    session[:user_id] = @user.id
+    
     if @user && @user.email == params[:user][:email]
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else 
-      flash[:message] = "you do not exist. How does it feel? create a profile to join in on the fun."
+      flash[:message] = "you do not exist. How does it feel? create a profile/type in the correct information to login"
       render :login
     end 
   end 

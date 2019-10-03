@@ -6,7 +6,7 @@ class KarmasController < ApplicationController
   end 
 
   def show 
-    # @user = User.find(params[:id])
+    
     @karma = id_param
   end 
 

@@ -29,6 +29,12 @@ class UsersController < ApplicationController
     end 
   end 
 
+  def edit 
+  end 
+
+  def update 
+  end 
+
 
   private 
 
@@ -42,6 +48,10 @@ class UsersController < ApplicationController
 
   def id_params 
     User.find(params[:id])
+  end 
+
+  def title_update_params 
+    params.require(current_user).permit(:title)
   end 
 
 end
