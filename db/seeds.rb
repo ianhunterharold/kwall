@@ -29,11 +29,15 @@ p4 = Prefill.create(user_id:3, selection: "Apporachable")
 p5 = Prefill.create(user_id:4, selection: "Thinks Big")
 p6 = Prefill.create(user_id:5, selection: "Isn't Afraid to Dare")
 
-g1 = Group.create(name: "Sports")
+g1 = Group.create(name: "Art")
 g2 = Group.create(name: "Dogs")
-g3 = Group.create(name: "Alma Mater")
+g3 = Group.create(name: "College Sports")
 g4 = Group.create(name: "Cats")
 g5 = Group.create(name: "Cooking")
+g6 = Group.create(name:"Espionage")
+g7 = Group.create(name:"Scary Movies")
+g8 = Group.create(name:"Coding in Ruby")
+
 
 ug1 = GroupUser.create(user_id: 1,group_id: 3)
 ug2 = GroupUser.create(user_id: 2,group_id: 3)

@@ -6,8 +6,10 @@ class KarmasController < ApplicationController
   end 
 
   def show 
-    
     @karma = id_param
+    if !@karma
+      redirect_to user_path(@user)
+    end 
   end 
 
   def new 
@@ -44,8 +46,8 @@ class KarmasController < ApplicationController
   def destroy 
     @karma = id_param
     @karma.destroy
-    flash[:delete] = "you deleted karma..."
-    redirect_to user_path
+    flash[:delete] = "you deleted karma...."
+    redirect_to user_path(@karma.current_user_id)
   end 
 
 
