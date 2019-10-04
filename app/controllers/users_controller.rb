@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def show 
     if logged_in?
       @user = id_params
+      @karma = Karma.new
+      @prefill = Prefill.new
     else 
       redirect_to login_path
     end 

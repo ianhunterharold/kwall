@@ -44,7 +44,7 @@ class KarmasController < ApplicationController
   def destroy 
     @karma = id_param
     @karma.destroy
-    flash[:delete] = "you deleted karma. someone put effort into that.."
+    flash[:delete] = "you deleted karma..."
     redirect_to user_path
   end 
 

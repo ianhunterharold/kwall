@@ -1,0 +1,14 @@
+
+<h4>____groups and their members____</h4>
+
+<%@group_users.each do |group_user|%>
+<label>group</label>
+<%=group_user.group.name%>
+<label>name</label>
+<%=group_user.user.name%>
+<br>
+<br>
+<%end%> 
+
+
+

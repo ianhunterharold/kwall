@@ -2,15 +2,15 @@ class GroupsController < ApplicationController
   before_action :security
   
   def new 
-    @group = Group.new
+    @group_user = GroupUser.new
   end 
   
   def index 
-    @groups = Group.all 
+    @group_user = GroupUser.all 
   end 
 
   def show
-    @group = id_params
+    @group_user = id_params
   end 
 
   # def create 
@@ -29,11 +29,11 @@ class GroupsController < ApplicationController
   private 
 
   def id_params 
-    Group.find(params[:id])
+    GroupUser.find(params[:id])
   end 
 
   def groups_params
-    params.require(:group).permit(:name, :user_id)
+    params.require(:group_user).permit(:name, :user_id)
   end 
 
 end

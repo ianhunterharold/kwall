@@ -1,6 +1,14 @@
 class GroupUsersController < ApplicationController
   before_action :security
   
+  def show
+    @group_user = GroupUser.find(params[:id])
+  end 
+
+  def index 
+    @group_users = GroupUser.all
+  end 
+
   def new 
     @group_user = GroupUser.new  
   end 
@@ -14,6 +22,15 @@ class GroupUsersController < ApplicationController
       render :new
     end 
   end 
+
+ 
+    def destroy 
+      @group_user = id_params
+      user_id = @group_user.user.id
+      @group_user.destroy
+      redirect_to user_path(user_id)
+    end 
+
 
 
   private 

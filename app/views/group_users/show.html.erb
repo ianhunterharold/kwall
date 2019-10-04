@@ -1,0 +1,7 @@
+
+<%=@group_user.id%>
+
+<%="Show page!" %>
+
+<%=link_to "leave group", @group_user, method: :delete, 
+data: {confirm: "Are you sure you want to remove yourself from this group?" } %>
