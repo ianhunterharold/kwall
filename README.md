@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Basic bones structure of a website. 
 
-* Ruby version
+https://kwall-ian-hunter-harold.herokuapp.com
 
-* System dependencies
+Might take a minute loading it the first time as I am using Heroku. 
 
-* Configuration
+Basic functionality emulates a gamification of the social space application at Zillow Group.
 
-* Database creation
 
-* Database initialization
+Zillow Group uses an applicaiton called Zall Wall which allows you to do just that, gamify the social space to make your professional journey more enriching. 
 
-* How to run the test suite
+Through this project, I was able to impliment, basic verifications, basic routing, model relationships including one many to many relationship through Ruby on Rails. 
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
